@@ -11,7 +11,7 @@ while ($true) {
         if ($command -like "!!*") {
             $command = $command.Substring(2)
         }
-
+        Write-Host $command
         # Check if the command is 'quit' and exit the loop
         if ($command -eq "quit") {
             Write-Host "Quit command received. Exiting..."
