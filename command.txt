@@ -1,1 +1,3 @@
 !!hostname
+!!ipconfig
+!!quit
