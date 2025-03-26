@@ -28,6 +28,11 @@ while ($true) {
                 $command = $command.Substring(2)
             }
 
+     	    # Check if the command starts with '##' and skip command
+            if ($command -like "##*") {
+                break
+            }
+
             Write-Host "Executing: $command"
 
             # Check if the command is 'quit' and exit the loop
