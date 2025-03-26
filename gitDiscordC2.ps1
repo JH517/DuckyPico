@@ -64,7 +64,7 @@ while ($true) {
 			
 
             # Wait for 60 seconds before the next command
-            Start-Sleep -Seconds 1
+            Start-Sleep -Seconds 5
         }
 		
 		# Check if the command is 'quit' and exit the loop
