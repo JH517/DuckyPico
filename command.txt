@@ -1,8 +1,8 @@
 !!hostname
 !!whoami
 !!systeminfo
-!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
-!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
+##!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
+##!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
 !!ipconfig
 ##New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
 ##Add-Content -Path "C:\Users\Leonardo\Desktop\new.txt" -Value "this is a file"
