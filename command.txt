@@ -1,3 +1,5 @@
-!!pwd
+!!hostname
+!!ipconfig
 !!whoami
+!!New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
 !!quit
