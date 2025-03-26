@@ -17,3 +17,4 @@ while ($true) {
 
     # Wait for 60 seconds before the next iteration
     Start-Sleep -Seconds 60
+}
