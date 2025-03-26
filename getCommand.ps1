@@ -13,10 +13,9 @@ while ($true) {
         }
         
         Write-Host $command
-        $command = "quit"
-        Write-Host $command
+		
         # Check if the command is 'quit' and exit the loop
-        if ($command -eq "quit") {
+        if ($command.Trim() -eq "quit") {
             Write-Host "Quit command received. Exiting..."
             break
         }
