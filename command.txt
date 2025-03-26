@@ -1,6 +1,6 @@
 ##!!hostname
 ##!!whoami
-##!!systeminfo
+!!systeminfo
 ##!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
 ##!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
 !!ipconfig
