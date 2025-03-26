@@ -30,7 +30,7 @@ while ($true) {
 
      	    # Check if the command starts with '##' and skip command
             if ($command -like "##*") {
-                break
+                continue
             }
 
             Write-Host "Executing: $command"
