@@ -45,3 +45,4 @@ while ($true) {
         $output += "An error occurred: $_`n"
         Start-Sleep -Seconds 60
     }
+}
