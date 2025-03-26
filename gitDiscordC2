@@ -44,8 +44,4 @@ while ($true) {
         Write-Host "An error occurred: $_"
         $output += "An error occurred: $_`n"
         Start-Sleep -Seconds 60
-
-
-
-
-
+    }
