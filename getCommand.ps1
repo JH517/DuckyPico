@@ -12,6 +12,12 @@ while ($true) {
             $command = $command.Substring(2)
         }
 
+        # Check if the command is 'quit' and exit the loop
+        if ($command -eq "quit") {
+            Write-Host "Quit command received. Exiting..."
+            break
+        }
+
         # Run the command
         Invoke-Expression -Command $command
 
