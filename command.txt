@@ -4,7 +4,7 @@
 #T1083, T1057, T1082, T1007
 !!hostname
 !!whoami
-!!systeminfo
+##systeminfo
 !!ipconfig
 ##!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
 ##!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
